@@ -15,6 +15,7 @@ const rootReducer = (state = initialState, action) =>
                 draft.isLoading = true;
                 break;
             case type.GET_DATA_SUCCESS:
+                draft.datas = action.data;
                 draft.isSuccess = true;
                 draft.isLoading = false;
                 break;
