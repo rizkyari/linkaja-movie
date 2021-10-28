@@ -14,3 +14,17 @@ export const getDataFailed = (error) =>({
     error,
 });
 
+export const getDetail = (id) => ({
+    type: type.GET_DETAIL,
+    id,
+});
+
+export const getDetailSuccess = (data) => ({
+    type: type.GET_DETAIL_SUCCESS,
+    data,
+});
+
+export const getDetailFailed = (error) => ({
+    type: type.GET_DETAIL_FAILED,
+    error,
+})
