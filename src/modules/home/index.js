@@ -8,6 +8,8 @@ const Home = (props) => {
 
     const { getData, getDetail, list} = props;
     const [show, setShow] = useState(false);
+    const [text, setText] = useState('');
+    const [suggestion,setSuggestion] = useState([]);
     useEffect(() => {
         getData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -18,10 +20,45 @@ const Home = (props) => {
         getDetail(id);
     }
 
+    const onChangeHandler = (text) => {
+        let matches = []
+        if(text.length>0){
+            matches = list.filter(item =>{
+                const regex = new RegExp(`${text}`,"gi");
+                return item.title.match(regex)
+            })
+        }
+        console.log(suggestion);
+        setSuggestion(matches);
+        setText(text);
+    }
+
+    const onSuggestHandler = (value) => {
+        console.log(value);
+         setText(value);
+        //  setSuggestion([]);
+    }
+
     return(
             <div>
                 <div className='search-input'>
-                    <input type='text'/>
+                    <input type='text' onChange={e => onChangeHandler(e.target.value)} value={text}
+                        // onBlur={() =>{
+                        //     setTimeout(() => {
+                        //         setSuggestion([])
+                        //     },100);
+                        // }}
+                    />
+                    <input type="date"/>
+                    {suggestion.length < 1 ? (
+                        <div>A</div>
+                    ) : (
+                        <div>
+                            {suggestion.map((item,idx) => {
+                                return (<div className={idx} onClick={() => onSuggestHandler(item.title)}>{item.title}</div>)
+                            })}
+                        </div>
+                    )}
                 </div>
                 { list.length < 1 ? (
                     <div></div>
