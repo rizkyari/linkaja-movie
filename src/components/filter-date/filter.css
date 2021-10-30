@@ -1,0 +1,12 @@
+.filter-date{
+    display: flex;
+    justify-content: center;
+}
+
+.first-date{
+    display: flex;
+}
+
+.last-date{
+    display: flex;
+}

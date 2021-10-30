@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as action from "../../redux/actions/action";
 import Modal from "../../components/modal/index";
 import Search from '../../components/search/search';
+import FilterDate from "../../components/filter-date/filter";
 import './index.css';
 
 const Home = (props) => {
@@ -22,9 +23,7 @@ const Home = (props) => {
     return(
             <div>
                 <Search/>
-                <div className='filter-date'>
-                    <input type="date"/>
-                </div>
+                <FilterDate/>
                 { list.length < 1 ? (
                     <div></div>
                 ) : (<div className='card-wrapper'> 
