@@ -1,12 +1,74 @@
-.filter-date{
-    display: flex;
-    justify-content: center;
+h5 {
+  margin-right: 10px;
 }
 
-.first-date{
-    display: flex;
+.filter-date {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  height: 30px;
 }
 
-.last-date{
-    display: flex;
+.filter-container {
+  border: 1px solid gainsboro;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 8px;
+}
+
+.first-date {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.last-date {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.button-filter {
+  display: flex;
+  align-items: center;
+}
+
+.filter-handler {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember", sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.filter-handler:hover {
+  background-color: #f7fafa;
+}
+
+.filter-handler:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  outline: 0;
 }

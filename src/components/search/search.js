@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { connect } from "react-redux";
 import * as action from "../../redux/actions/action";
 import SearchImg from '../../assets/images/search.png';
+import './search.css';
 
 const Search = (props) => {
 
@@ -45,7 +46,8 @@ const Search = (props) => {
     }
 
     return (
-      <>
+      <div className="search-container">
+        <div className="search-wrapper">
         <div className="search-input">
           <input
             type="text"
@@ -53,6 +55,7 @@ const Search = (props) => {
             onKeyPress={(e) => onKeyPressHandler(e)}
             value={text}
             className="search-text"
+            placeholder="Search Here..."
             // onBlur={() =>{
             //     setTimeout(() => {
             //         setSuggestion([])
@@ -81,7 +84,8 @@ const Search = (props) => {
             </div>
           )}
         </div>
-      </>
+      </div>
+      </div>
     );
 }
 

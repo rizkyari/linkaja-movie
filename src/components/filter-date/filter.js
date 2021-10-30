@@ -28,8 +28,9 @@ const FilterDate = (props) => {
 
   return (
     <div className="filter-date">
+      <div className="filter-container">
       <div className='first-date'>
-        <h5>From</h5>
+        <h5>Filter From</h5>
         <input
           type="date"
           onChange={(e) => setfirstDate(e.target.value)}
@@ -44,10 +45,11 @@ const FilterDate = (props) => {
           value={lastDate}
         />
       </div>
-      <div>
-        <button onClick={() => dateHandler()}>see detail</button>
-        <button onClick={() => resetDate(allData)}>Reset</button>
+      <div className="button-filter">
+        <button onClick={() => dateHandler()} className="filter-handler">Submit</button>
+        <button onClick={() => resetDate(allData)} className="filter-handler">Reset</button>
       </div>
+    </div>
     </div>
   );
 };
