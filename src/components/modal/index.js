@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import * as action from "../../redux/actions/action";
 import './index.css';
 
@@ -15,15 +16,15 @@ const Modal = (props) => {
         <div className="modal" onClick={props.onClose}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
                 <div className="modal-header">
-                    <div className="modal-title">{detail.title}</div>
+                    <h3 className="modal-title">{detail.title}</h3>
                 </div>
                 <div className="modal-body">
-                    <img src={detail.image} alt={detail.title}/>
+                    <LazyLoadImage effect='blur' src={detail.image} alt={detail.title} className="detail-image"/>
                     <div>Show Time : {detail.showTime}</div>
                     <div>Likes : {detail.like}</div>
                 </div>
                 <div className="modal-footer">
-                    <button className="button" onClick={props.onClose}>Close</button>
+                    <button className="button-close" onClick={props.onClose}>Close</button>
                 </div>
             </div>
         </div>

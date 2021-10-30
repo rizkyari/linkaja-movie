@@ -33,3 +33,13 @@ export const getSearch = (data) => ({
     type: type.SET_SEARCH_RESULT,
     data,
 })
+
+export const filterDate = (data) => ({
+    type: type.FILTER_DATE,
+    data,
+})
+
+export const resetFilter = (data) => ({
+    type: type.RESET_FILTER,
+    data,
+})

@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import * as action from "../../redux/actions/action";
 import Modal from "../../components/modal/index";
 import Search from '../../components/search/search';
+import FilterDate from "../../components/filter-date/filter";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './index.css';
 
 const Home = (props) => {
@@ -22,18 +24,16 @@ const Home = (props) => {
     return(
             <div>
                 <Search/>
-                <div className='filter-date'>
-                    <input type="date"/>
-                </div>
+                <FilterDate/> 
                 { list.length < 1 ? (
                     <div></div>
                 ) : (<div className='card-wrapper'> 
                     {list.map((item,idx) => {
                         return(
                             <div key={idx} className='card-container'>
-                                <img src={item.image} alt='img' className='img-card'/>
+                                <LazyLoadImage src={item.image} alt='img' className='img-card' effect="blur"/>
                                 <div className='title-card'>{item.title}</div>
-                                <button onClick={() => seeModal(item.id)}>see detail</button>
+                                <button onClick={() => seeModal(item.id)} className="button-35">see detail</button>
                             </div>
                         )
                     })}

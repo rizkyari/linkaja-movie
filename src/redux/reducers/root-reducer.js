@@ -44,6 +44,12 @@ const rootReducer = (state = initialState, action) =>
             case type.SET_SEARCH_RESULT:
                 draft.datas = action.data;
                 break;
+            case type.FILTER_DATE:
+                draft.datas = action.data;
+                break;
+            case type.RESET_FILTER:
+                draft.datas = action.data;
+                break;
             default:
                 break;
         }
