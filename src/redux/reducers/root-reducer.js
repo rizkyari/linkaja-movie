@@ -3,6 +3,7 @@ import * as type from "../type/type";
 
 export const initialState = {
     datas:[],
+    allData:[],
     detail: false,
     isLoading: false,
     isSuccess: false,
@@ -20,6 +21,7 @@ const rootReducer = (state = initialState, action) =>
                 break;
             case type.GET_DATA_SUCCESS:
                 draft.datas = action.data;
+                draft.allData = action.data;
                 draft.isSuccess = true;
                 draft.isLoading = false;
                 break;
@@ -38,6 +40,9 @@ const rootReducer = (state = initialState, action) =>
             case type.GET_DETAIL_FAILED: 
                 draft.isDetailError = true;
                 draft.isDetailLoading = false;
+                break;
+            case type.SET_SEARCH_RESULT:
+                draft.datas = action.data;
                 break;
             default:
                 break;

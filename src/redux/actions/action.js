@@ -28,3 +28,8 @@ export const getDetailFailed = (error) => ({
     type: type.GET_DETAIL_FAILED,
     error,
 })
+
+export const getSearch = (data) => ({
+    type: type.SET_SEARCH_RESULT,
+    data,
+})
