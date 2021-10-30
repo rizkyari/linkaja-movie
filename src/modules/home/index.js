@@ -2,11 +2,12 @@ import React,{useEffect, useState} from "react";
 import { connect } from "react-redux";
 import * as action from "../../redux/actions/action";
 import Modal from "../../components/modal/index";
+import Search from '../../components/search/search';
 import './index.css';
 
 const Home = (props) => {
 
-    const { getData, getDetail, list} = props;
+    const { getData, getDetail ,list} = props;
     const [show, setShow] = useState(false);
     useEffect(() => {
         getData();
@@ -20,8 +21,9 @@ const Home = (props) => {
 
     return(
             <div>
-                <div className='search-input'>
-                    <input type='text'/>
+                <Search/>
+                <div className='filter-date'>
+                    <input type="date"/>
                 </div>
                 { list.length < 1 ? (
                     <div></div>
@@ -51,7 +53,7 @@ const mapStateToProps = (state) => {
   function mapDispatchToProps(dispatch){
   return{
       getData: () => dispatch(action.getData()),
-      getDetail: (id) => dispatch(action.getDetail(id))
+      getDetail: (id) => dispatch(action.getDetail(id)),
   }
   }
 
